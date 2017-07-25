@@ -1,0 +1,56 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE races [
+    <!ELEMENT races (race*, runner*)>
+    <!ELEMENT race (sponsor?, result+)>
+        <!ATTLIST race name ID #REQUIRED>
+    <!ELEMENT sponsor (#PCDATA)>
+    <!ELEMENT result (#PCDATA)>
+        <!ATTLIST result who IDREF #REQUIRED>
+    <!ELEMENT runner (fullname?)>
+        <!ATTLIST runner rid ID #REQUIRED>
+        <!ATTLIST runner ran IDREFS #REQUIRED>
+    <!ELEMENT fullname (#PCDATA)>
+]>
+<!-- These are real names of runners, but not real running times! --> 
+<races>
+    <race name = "WaterfrontMarathon">
+        <result who = "r12">2.50</result>
+        <result who = "r55">2.25</result>
+        <result who = "r1">3.50</result>
+    </race>
+    <race name = "RunForTheCure">
+        <result who = "r12">2.90</result>
+        <result who = "r85">5.25</result>
+        <result who = "r1">3.90</result>
+    </race>
+    <race name = "SportingLife10K">
+        <result who = "r85">6.00</result>
+        <result who = "r1">3.25</result>
+    </race>
+    <race name = "DawnAtTheDon">
+        <result who = "r70">7.80</result>
+        <result who = "r98">7.80</result>
+    </race>
+    <race name = "HarryRosen">
+        <sponsor>HarryRosen</sponsor>
+        <result who = "r12">3.00</result>
+        <result who = "r1">3.50</result>
+    </race>
+    <runner rid = "r12" ran = "WaterfrontMarathon RunForTheCure HarryRosen">
+        <fullname>Korir, Laban</fullname>
+    </runner>
+    <runner rid = "r55" ran = "WaterfrontMarathon">
+        <fullname>Nongodlwana, Wandisile</fullname>
+    </runner>
+    <runner rid = "r85" ran = "SportingLife10K RunForTheCure">
+    </runner>
+    <runner rid = "r1" ran = "SportingLife10K WaterfrontMarathon RunForTheCure HarryRosen">
+        <fullname>LaBeaud, Natasha</fullname>
+    </runner>
+    <runner rid = "r70" ran = "DawnAtTheDon">
+        <fullname>Ceddia, Rolando</fullname>
+    </runner>
+    <runner rid = "r98" ran = "DawnAtTheDon">
+        <fullname>Marchant, Lanni</fullname>
+    </runner>
+</races>

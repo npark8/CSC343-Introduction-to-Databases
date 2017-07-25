@@ -1,0 +1,54 @@
+========== JAVA Connection Test: PASS ==========
+
+========== JAVA assignGrader + assigngrader_data0: PASS ==========
+
+========== SQL(Grader) assignGrader + assigngrader_data0: PASS ==========
+
+
+========== JAVA createGroups + creategroups_data0: PASS ==========
+
+========== SQL(AssignmentGroup) createGroups + creategroups_data0: FAIL ==========
+
+## Feedback: Expected 3 rows instead of 1
+
+## Expected Solution:
+
+ group_id | assignment_id |      repo       
+----------+---------------+-----------------
+     2020 |          1001 | repo_url
+     2021 |          1000 | blah/group_2021
+     2022 |          1000 | blah/group_2022
+(3 rows)
+
+## Your Solution:
+
+ group_id | assignment_id |   repo   
+----------+---------------+----------
+     2020 |          1001 | repo_url
+(1 row)
+
+
+========== SQL(Membership) createGroups + creategroups_data0: FAIL ==========
+
+## Feedback: Expected 3 rows instead of 0
+
+## Expected Solution:
+
+ username | group_id 
+----------+----------
+ s1       |     2021
+ s2       |     2021
+ s3       |     2022
+(3 rows)
+
+## Your Solution:
+
+ username | group_id 
+----------+----------
+(0 rows)
+
+
+========== JAVA recordMember + recordmember_data0: PASS ==========
+
+========== SQL(Membership) recordMember + recordmember_data0: PASS ==========
+

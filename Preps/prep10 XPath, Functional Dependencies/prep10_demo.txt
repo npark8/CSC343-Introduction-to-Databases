@@ -1,0 +1,42 @@
+galax-run q1.xp
+<Invitee nickname="Pumpkin" response="yes">
+      <Who age="7" email="diane@gmail.com">
+         <First>Catherine</First>
+         <Middle>Julia</Middle>
+         <Last>Fairgrieve</Last>
+      </Who>
+   </Invitee>,
+<Invitee response="no">
+      <Who age="6" email="cm@gmail.com">
+         <First>Chloe</First>
+         <Last>McLaughlin</Last>
+      </Who>
+   </Invitee>,
+<Invitee response="yes">
+      <Who age="2">
+         <First>Otis</First>
+      </Who>
+   </Invitee>,
+<Invitee response="yes">
+      <Who age="4" email="harper@gmail.com">
+         <First>Mia</First>
+         <Last>H.F.</Last>
+      </Who>
+   </Invitee>
+
+galax-run q2.xp
+<First>Catherine</First>,
+<Last>Fairgrieve</Last>,
+<First>Chloe</First>,
+<Last>McLaughlin</Last>,
+<First>Otis</First>,
+<First>Mia</First>,
+<Last>H.F.</Last>
+
+galax-run q3.xp
+attribute email {"diane@gmail.com"},
+attribute email {"cm@gmail.com"},
+attribute email {"harper@gmail.com"}
+
+galax-run q4.xp
+<First>Catherine</First>, <First>Otis</First>, <First>Mia</First>

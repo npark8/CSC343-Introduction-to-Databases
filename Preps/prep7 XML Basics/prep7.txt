@@ -1,0 +1,147 @@
+QUESTION 1.
+
+=== Before fixing the XML ===
+xmllint guests.xml
+guests.xml:3: parser error : attributes construct error
+   <Event date="150113", start="1400", end="1630"/>
+                       ^
+guests.xml:3: parser error : Couldn't find end of Start Tag Event line 3
+   <Event date="150113", start="1400", end="1630"/>
+                       ^
+guests.xml:6: parser error : Opening and ending tag mismatch: First line 6 and Frist
+         <First>Catherine</Frist>
+                                 ^
+guests.xml:16: parser error : Opening and ending tag mismatch: Invitee line 11 and Guestlist
+   </Guestlist>
+               ^
+guests.xml:17: parser error : Opening and ending tag mismatch: GuestList line 2 and Invitee
+</Invitee>
+
+=== After fixing the XML === 
+xmllint guests.xml
+<?xml version="1.0" standalone="yes"?>
+<GuestList>
+   <Event date="150113" start="1400" end="1630"/>
+   <Invitee nickname="Pumpkin" response="yes">
+      <Who age="7" email="diane@gmail.com">
+         <First>Catherine</First>
+         <Middle>Julia</Middle>
+         <Last>Fairgrieve</Last>
+      </Who>
+   </Invitee>
+   <Invitee response="no">
+      <Who age="6" email="cm@gmail.com">
+         <First>Chloe</First>
+         <Last>McLaughlin</Last>
+      </Who>
+   </Invitee>
+</GuestList>
+
+QUESTION 2.
+
+1. tags: Invitee, Who, First, Middle, Last
+2. empty element: Event
+3. root element: GuestList
+4. attributes: nickname, response, age, email
+
+QUESTION 3.
+
+=== Before fixing the DTD ===
+xmllint --valid recipes.xml
+recipes.xml:17: element RECIPE: validity error : No declaration for attribute keywords of element RECIPE
+   <RECIPE name="hard-boiled egg" type="breakfast" keywords="protein easy">
+                                                                          ^
+recipes.xml:21: element QUANTITY: validity error : Element QUANTITY does not carry attribute units
+             <QUANTITY amount="1"/>
+                                   ^
+recipes.xml:28: element STEPS: validity error : Element STEPS content does not follow the DTD, expecting (STEP , STEP+), got (STEP )
+      </STEPS>
+              ^
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE RECIPES [
+<!ELEMENT RECIPES (RECIPE)+>
+<!ELEMENT RECIPE (INGREDIENTS , STEPS)>
+<!ATTLIST RECIPE name CDATA #REQUIRED>
+<!ATTLIST RECIPE type CDATA #IMPLIED>
+<!ELEMENT INGREDIENTS (INGREDIENT)+>
+<!ELEMENT INGREDIENT (NAME , QUANTITY)>
+<!ELEMENT NAME (#PCDATA)>
+<!ELEMENT QUANTITY EMPTY>
+<!ATTLIST QUANTITY amount CDATA #REQUIRED>
+<!ATTLIST QUANTITY units CDATA #REQUIRED>
+<!ELEMENT STEPS (STEP , STEP+)>
+<!ELEMENT STEP (#PCDATA)>
+]>
+<RECIPES>
+   <RECIPE name="hard-boiled egg" type="breakfast" keywords="protein easy">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>egg</NAME>
+             <QUANTITY amount="1"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Boil for 12 minutes.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+</RECIPES>
+
+=== After fixing the DTD ===
+xmllint --valid recipes.xml
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE RECIPES [
+<!ELEMENT RECIPES (RECIPE)+>
+<!ELEMENT RECIPE (INGREDIENTS , STEPS)>
+<!ATTLIST RECIPE name CDATA #REQUIRED>
+<!ATTLIST RECIPE type CDATA #IMPLIED>
+<!ATTLIST RECIPE keywords CDATA #IMPLIED>
+<!ELEMENT INGREDIENTS (INGREDIENT)+>
+<!ELEMENT INGREDIENT (NAME , QUANTITY?)>
+<!ELEMENT NAME (#PCDATA)>
+<!ELEMENT QUANTITY EMPTY>
+<!ATTLIST QUANTITY amount CDATA #IMPLIED>
+<!ATTLIST QUANTITY units CDATA #IMPLIED>
+<!ELEMENT STEPS (STEP)+>
+<!ELEMENT STEP (#PCDATA)>
+]>
+<RECIPES>
+   <RECIPE name="hard-boiled egg" type="breakfast" keywords="protein easy">
+      <INGREDIENTS>
+         <INGREDIENT>
+             <NAME>egg</NAME>
+             <QUANTITY amount="1"/>
+         </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+         <STEP>
+            Boil for 12 minutes.
+         </STEP>
+      </STEPS>
+   </RECIPE>
+   <RECIPE name="fried chicken" type="fastfood">
+      <INGREDIENTS>
+        <INGREDIENT>
+          <NAME>chicken</NAME>
+          <QUANTITY amount="1"/>
+        </INGREDIENT>
+        <INGREDIENT>
+          <NAME>flour</NAME>
+          <QUANTITY/>
+        </INGREDIENT>
+        <INGREDIENT>
+          <NAME>oil</NAME>
+          <QUANTITY/>
+        </INGREDIENT>
+      </INGREDIENTS>
+      <STEPS>
+          <STEP>
+              Combine chicken and flour.
+          </STEP>
+          <STEP>
+              Fry the chicken in boiling oil until turned brown.
+          </STEP>
+      </STEPS>
+   </RECIPE>
+</RECIPES>

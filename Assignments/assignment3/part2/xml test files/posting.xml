@@ -1,0 +1,30 @@
+<postings>
+	<posting pID = "p1">
+		<position>
+		Database Admin
+		</position>
+		<reqSkill what="SQL" level="1" importance="1"/>
+		<questions>
+			<question qID = "11">
+			Question 1 for pID 1?
+			</question>
+			<question qID = "22">
+			Question 2 for pID 1?
+			</question>
+		</questions>
+	</posting>
+	<posting pID = "p2">
+		<position>
+		Soul Reaper
+		</position>
+		<reqSkill what="Python" level="2" importance="2"/>
+		<questions>
+			<question qID = "33">
+			Question 1 for pID 2?
+			</question>
+			<question qID = "44">
+			Question 2 for pID 2?
+			</question>
+		</questions>
+	</posting>
+</postings>

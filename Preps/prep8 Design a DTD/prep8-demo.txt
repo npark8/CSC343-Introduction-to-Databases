@@ -1,0 +1,55 @@
+xmllint --valid books.xml
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE BOOKS [
+<!ELEMENT BOOKS (BOOK)*>
+<!ELEMENT BOOK (AUTHOR* , RATINGS* , REVIEWS*)>
+<!ATTLIST BOOK title CDATA #REQUIRED>
+<!ATTLIST BOOK year CDATA #REQUIRED>
+<!ELEMENT AUTHOR (FIRST , LAST , MIDDLE?)>
+<!ELEMENT FIRST (#PCDATA)>
+<!ELEMENT LAST (#PCDATA)>
+<!ELEMENT MIDDLE (#PCDATA)>
+<!ELEMENT RATINGS EMPTY>
+<!ATTLIST RATINGS rate (0 | 1 | 2 | 3 | 4 | 5) #IMPLIED>
+<!ELEMENT REVIEWS (REVIEW)+>
+<!ELEMENT REVIEW (USER? , COMMENT?)>
+<!ELEMENT USER EMPTY>
+<!ATTLIST USER username CDATA #IMPLIED>
+<!ELEMENT COMMENT (#PCDATA)>
+]>
+<BOOKS>
+ <BOOK title="Digital Electronics: A Practical Approach with VHDL" year="2011">
+  <AUTHOR>
+   <FIRST>William</FIRST>
+   <LAST>Kleitz</LAST>
+  </AUTHOR>
+  <RATINGS rate="3"/>
+  <RATINGS rate="4"/>
+  <REVIEWS>
+   <REVIEW>
+   <USER username="Jason13"/>
+    <COMMENT>This book is great</COMMENT>
+    </REVIEW>
+  </REVIEWS>
+ </BOOK>
+ <BOOK title="SQL Database for Beginners" year="2014">
+  <AUTHOR>
+   <FIRST>Martin</FIRST>
+   <LAST>Holzke</LAST>
+  </AUTHOR>
+  <AUTHOR>
+   <FIRST>Tom</FIRST>
+   <LAST>Stachowitz</LAST>
+  </AUTHOR>
+  <RATINGS rate="5"/>
+  <RATINGS rate="2"/>
+ </BOOK>
+ <BOOK title="The C++ Programming Language" year="2013">
+  <AUTHOR>
+   <FIRST>Bjarne</FIRST>
+   <LAST>Stroustrup</LAST>
+  </AUTHOR>
+  <RATINGS rate="2"/>
+  <RATINGS rate="4"/>
+ </BOOK>
+</BOOKS>

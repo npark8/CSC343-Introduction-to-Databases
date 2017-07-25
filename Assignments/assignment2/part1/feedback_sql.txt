@@ -1,0 +1,55 @@
+========== q1 + q1_basic: PASS ==========
+
+
+========== q10 + q10_no_results: PASS ==========
+
+
+========== q2 + q2_basic: PASS ==========
+
+
+========== q3 + q3_mixed_groups: PASS ==========
+
+
+========== q4 + q4_mixed_marked_status: PASS ==========
+
+
+========== q5 + q5_variable_num_groups_per_assignment: PASS ==========
+
+
+========== q6 + q6_submission_ties: PASS ==========
+
+
+========== q7 + q7_multiple_assignments_no_duplicates: PASS ==========
+
+
+========== q8 + q8_missing_submission_solo: PASS ==========
+
+
+========== q9 + q9_larger_groups: FAIL ==========
+
+## Feedback: Expected 1 rows instead of 11
+
+## Expected Solution:
+
+ student1 | student2 
+----------+----------
+ s1       | s2
+(1 row)
+
+## Your Solution:
+
+ student1 | student2 
+----------+----------
+ s1       | s2
+ s11      | s12
+ s12      | s13
+ s13      | s14
+ s2       | s3
+ s3       | s4
+ s4       | s5
+ s5       | s6
+ s6       | s7
+ s7       | s8
+ s8       | s9
+(11 rows)
+

@@ -1,0 +1,42 @@
+<interviews>
+	<interview rID = "1" pID="1" sID="1">
+		<date>12-12-2014</date>
+		<time>9:00</time>
+		<location>SF</location>
+		<assessment>
+			<answers>
+				<answer>11</answer>
+				<answer>22</answer>
+			</answers>
+			<techProficiency>90</techProficiency>
+			<communication>80</communication>
+			<enthusiasm>60</enthusiasm>
+			<collegiality>50</collegiality>
+		</assessment>
+	</interview>
+	<interview rID = "2" pID="2" sID="2">
+		<date>12-12-2014</date>
+		<time>13:00</time>
+		<location>SF</location>
+		<assessment>
+			<answers>
+				<answer>66</answer>
+			</answers>
+			<techProficiency>100</techProficiency>
+			<communication>20</communication>
+			<enthusiasm>100</enthusiasm>
+			<collegiality>50</collegiality>
+		</assessment>
+	</interview>
+	<interviewer sID="1">
+		<forename>FirstInter1</forename>
+		<surname>LastInter1</surname>
+		<honorific>Mr.</honorific>
+	</interviewer>
+	<interviewer sID="2">
+		<forename>FirstInter2</forename>
+		<surname>LastInter2</surname>
+		<honorific>Ms.</honorific>
+		<title>Mr.</title>
+	</interviewer>
+</interviews>

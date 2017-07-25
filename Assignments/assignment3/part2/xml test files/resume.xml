@@ -1,0 +1,96 @@
+<resumes>
+	<resume rID = "r1">
+		<summary>
+		The summary.
+		</summary>
+		<identification>
+			<name>
+				<forename> Firstname1 </forename>
+				<surname> Lastname1 </surname>
+				<honorific> Mr. </honorific>
+				<title> ENG </title>
+			</name>
+			<DOB> What's a DOB? </DOB>
+			<citizenship> Malaysian </citizenship>
+			<address> 80 River Street. ON, CA </address>
+			<telephone> 123-123-1234 </telephone>
+			<email> some1@mail.com </email>
+		</identification>
+		<education>
+			<degree level="undergraduate">
+				<degreeName> App Sci and Eng. </degreeName>
+				<institution> UofT </institution>
+				<major> Computer Software </major>
+				<minor> Computer Hardware </minor>
+				<period>
+					<startDate> 12-12-1999 </startDate>
+					<endDate> 12-13-2003 </endDate>
+				</period>
+			</degree>
+		</education>
+		<experience>
+			<position where="Black hole">
+				<title> Blah </title>
+				<description> The description </description>
+				<period>
+					<startDate> Birth </startDate>
+					<endDate> Death </endDate>
+				</period>
+			</position>
+		</experience>
+		<skills>
+			<skill what = "SQL" level = "5"/>
+			<skill what = "LaTeX" level = "5"/>
+			<skill what = "Python" level = "5"/>
+			<skill what = "LaTeX" level = "5"/>
+			<skill what = "Python" level = "5"/>
+		</skills>
+	</resume>
+	<resume rID = "r2">
+		<summary>
+		The summary.
+		</summary>
+		<identification>
+			<name>
+				<forename>Firstname2</forename>
+				<surname>Lastname2</surname>
+				<honorific>Ms.</honorific>
+				<title>MENG</title>
+			</name>
+			<DOB>The start of the universe.</DOB>
+			<citizenship>Canadian</citizenship>
+			<address>123 Elm Street. ON, CA</address>
+			<telephone>416-123-1234</telephone>
+			<email>some2@mail.com</email>
+		</identification>
+		<education>
+			<degree level="doctoral">
+				<degreeName>App Sci and Eng.</degreeName>
+				<institution>UofT</institution>
+				<major>Computer Engineering</major>
+				<minor>Networks</minor>
+				<honours />
+				<period>
+					<startDate>01-01-0</startDate>
+					<endDate>12-12-2012</endDate>
+				</period>
+			</degree>
+		</education>
+		<experience>
+			<position where="Black hole">
+				<title>Grim Reaper</title>
+				<description>Reaps peoples souls.</description>
+				<period>
+					<startDate>BigBang</startDate>
+					<endDate>Apocalypse</endDate>
+				</period>
+			</position>
+		</experience>
+		<skills>
+			<skill what = "R" level = "5"/>
+			<skill what = "SQL" level = "5"/>
+			<skill what = "LaTeX" level = "5"/>
+			<skill what = "Python" level = "5"/>
+		</skills>
+	</resume>
+</resumes>
